@@ -1,0 +1,16 @@
+---
+# Source: jenkins/templates/config.yaml
+
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ci-jenkins
+data:
+  plugins.txt: |-
+    kubernetes:1.1
+    workflow-aggregator:2.5
+    workflow-job:2.15
+    credentials-binding:1.13
+    git:3.6.4
+    google-compute-engine:1.0.4

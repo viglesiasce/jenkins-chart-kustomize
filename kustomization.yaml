@@ -1,0 +1,6 @@
+resources:
+  - jenkins-base.yaml
+patches:
+  - config.yaml
+  - home-pvc.yaml
+  - master.yaml

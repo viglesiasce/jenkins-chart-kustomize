@@ -1,0 +1,22 @@
+---
+# Source: jenkins/templates/jenkins-master-deployment.yaml
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ci-jenkins
+spec:
+  template:
+    spec:
+      containers:
+        - name: ci-jenkins
+          args: [ "--argumentsRealm.passwd.admin=foobar",  "--argumentsRealm.roles.admin=admin"]
+          env:
+            - name: JAVA_OPTS
+              value: "-Xms1000m -Xmx3000m"
+          resources:
+            limits:
+              cpu: 2
+              memory: 3000Mi
+            requests:
+              cpu: 1
+              memory: 1000Mi
